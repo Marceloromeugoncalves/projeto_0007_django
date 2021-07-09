@@ -9,7 +9,7 @@
         var ctx = document.getElementById('myChart').getContext('2d');
 		
         var myChart = new Chart(ctx, {
-			type: {% if chart_type != '' %}'{{ chart_type }}',{% endif %}
+			type: '{{ chart_type }}',
             data: {
                 labels: [{% for item in query_set %}'{{ item.name }}',{% endfor %}],
                 datasets: [{
@@ -61,9 +61,8 @@
 <label class="ui label" for="chart_type">Choose a chart type:</label>
 
 <select class="ui selection dropdown" name="chart_type" id="chart_type" onchange="javascript:this.form.submit()">
-    <option></option>
-    <option value="bar">Bar</option>
-    <option value="pie">Pie</option>
+    <option value="bar" {% if chart_type == 'bar'%} selected {% endif %}>Bar</option>
+    <option value="pie" {% if chart_type == 'pie'%} selected {% endif %}>Pie</option>
 </select>
 
 </form>

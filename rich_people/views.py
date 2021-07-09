@@ -18,7 +18,7 @@ def home(request):
     query_set = RichPerson.objects.all()
 
     if chart_type is None:
-        chart_type = ''
+        chart_type = 'bar'
 
     context = {
         'chart_type': chart_type,
