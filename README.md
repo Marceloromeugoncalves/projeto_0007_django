@@ -1,4 +1,4 @@
-# projeto_0007_django
+# Exemplo de utilização do chartjs com Django
 
 Exemplo de utilização do ChartJS com o Django.
 
